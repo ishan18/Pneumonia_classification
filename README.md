@@ -89,4 +89,23 @@ On the test set, we achieved:
 - Precision = 0.91 
 
 
+# Model type conversion
 
+The model was converted into a TFLite model using the TFLiteConverter for deploying it to android Apps.
+
+## Stay Healthy App
+
+- The app uses the generated tflite model for image classification. 
+- User Uploads the chest X-ray of the person.
+- The image is first converted into a bitmap and then each pixel is extracted and stored into a ByteBuffer.
+- An Interpreter object is instantiated which holds the tflite model.
+- This interpreter object is then invoked by passing 2 ByteBuffer objects (the input and the output), the output is modified during this call.
+
+## App Permissions
+- READ EXTERNAL STORAGE
+
+## Screenshots
+
+<img src="https://github.com/ishan18/Pneumonia_classification/blob/master/screenshots/home.jpeg" alt="Home Screen" width="250px" height="400px">
+<img src="https://github.com/ishan18/Pneumonia_classification/blob/master/screenshots/pneumonia.jpeg" alt="Pneumonia classification" width="250px" height="400px">
+<img src="https://github.com/ishan18/Pneumonia_classification/blob/master/screenshots/normal.jpeg" alt="Normal classification" width="250px" height="400px">
